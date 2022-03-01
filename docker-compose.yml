@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  frontend:
+    build: ./dashboard/
+    ports:
+      - "3000:3000"
+    container_name: front-container
+    restart: always
+    network_mode: host
+
+  backend:
+    build: ./node_server/
+    ports:
+      - "8080:8080"
+    container_name: node-backend
+    restart: always
+    network_mode: host
+  
